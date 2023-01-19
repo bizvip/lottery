@@ -41,7 +41,7 @@ final class EmployeeController extends Controller
             return $this->resp(msg: "您输入的密码 {$pwd} 不正确", code: 39);
         }
 
-        session($usr, $user);
+        $req->session()->put($usr, $user);
 
         return $this->resp();
     }
